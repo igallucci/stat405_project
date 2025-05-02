@@ -1,0 +1,15 @@
+log = log/$(Cluster)_$(Process).log
+error = error/$(Cluster)_$(Process).err
+output = output/$(Cluster)_$(Process).out
+
+executable = ./find_top_5.sh
+arguments = $(file)
+
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+transfer_input_files = $(file), files.txt
+request_cpus = 1
+request_memory = 2GB
+request_disk = 2GB
+
+queue file from files.txt
